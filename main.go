@@ -1,6 +1,6 @@
 package main
 
-import _case "testProject/file-rw/case"
+import _case "testProject/atomic/case"
 
 func main() {
 	//通信共享内存测试
@@ -23,5 +23,8 @@ func main() {
 	//文件读取-通过bufio按行读取
 	//_case.ReadLine2()
 	//文件读取 -通过scanner按行读取
-	_case.ReadLine3()
+	//_case.ReadLine3()
+
+	//原子操作
+	_case.AtomicCase2()
 }
