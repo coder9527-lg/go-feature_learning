@@ -1,6 +1,11 @@
 package main
 
-import _case "testProject/atomic/case"
+import (
+	"context"
+	"os"
+	"os/signal"
+	_case "testProject/context/case"
+)
 
 func main() {
 	//通信共享内存测试
@@ -26,5 +31,11 @@ func main() {
 	//_case.ReadLine3()
 
 	//原子操作
-	_case.AtomicCase2()
+	//_case.AtomicCase2()
+
+	//context控制协程退出
+	_case.ContextCase()
+	ctx, stop := signal.NotifyContext(context.Background(), os.Kill, os.Interrupt)
+	defer stop()
+	<-ctx.Done()
 }
