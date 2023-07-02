@@ -1,11 +1,6 @@
 package main
 
-import (
-	"context"
-	"os"
-	"os/signal"
-	_case "testProject/context/case"
-)
+import _case "testProject/generic/case"
 
 func main() {
 	//通信共享内存测试
@@ -14,7 +9,7 @@ func main() {
 	////channel.Communication()
 	//ch := make(chan os.Signal, 0)
 	//signal.Notify(ch, os.Interrupt, os.Kill)
-	//
+	////
 	//<-ch
 
 	//文件复制
@@ -34,8 +29,11 @@ func main() {
 	//_case.AtomicCase2()
 
 	//context控制协程退出
-	_case.ContextCase()
-	ctx, stop := signal.NotifyContext(context.Background(), os.Kill, os.Interrupt)
-	defer stop()
-	<-ctx.Done()
+	//_case.ContextCase()
+	//ctx, stop := signal.NotifyContext(context.Background(), os.Kill, os.Interrupt)
+	//defer stop()
+	//<-ctx.Done()
+
+	//泛型使用
+	_case.SimpleCase()
 }
