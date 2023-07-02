@@ -1,6 +1,6 @@
 package main
 
-import _case "testProject/generic/case"
+import "testProject/character"
 
 func main() {
 	//通信共享内存测试
@@ -35,5 +35,8 @@ func main() {
 	//<-ctx.Done()
 
 	//泛型使用
-	_case.SimpleCase()
+	//_case.SimpleCase()
+
+	//通用占位符
+	character.TestCharacterNumber()
 }
