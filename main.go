@@ -1,6 +1,9 @@
 package main
 
-import "testProject/character"
+import (
+	"testProject/ImplementOfCacheSystem"
+	"time"
+)
 
 func main() {
 	//通信共享内存测试
@@ -38,5 +41,17 @@ func main() {
 	//_case.SimpleCase()
 
 	//通用占位符
-	character.TestCharacterNumber()
+	//character.TestCharacterNumber()
+
+	//cache缓存使用示例
+	cache := ImplementOfCacheSystem.NewMemCache()
+	cache.SetMaxMemory("300B")
+
+	cache.Set("int", 1, time.Second)
+	cache.Set("bool", false, time.Second)
+	cache.Set("data", map[string]interface{}{"a": 1}, time.Second)
 }
+
+//func NewMemCache() ImplementOfCacheSystem.Cache {
+//
+//}
